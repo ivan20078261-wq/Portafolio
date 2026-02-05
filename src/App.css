@@ -1,0 +1,365 @@
+/* Variables de color azul */
+:root {
+  --primary-blue: #1a73e8;
+  --dark-blue: #0d47a1;
+  --light-blue: #4285f4;
+  --background-blue: #f8fbff;
+  --text-dark: #202124;
+  --text-light: #5f6368;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 139, 0.08);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ==================== */
+/* CONTENEDOR PRINCIPAL */
+/* ==================== */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Barra de progreso */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-blue);
+  transform-origin: 0%;
+  z-index: 1000;
+}
+
+/* ==================== */
+/* ENCABEZADO CENTRADO */
+/* ==================== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: transparent;
+  transition: all 0.3s ease;
+  padding: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 139, 0.08);
+  padding: 15px 0;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==================== */
+/* CONTENIDO PRINCIPAL CENTRADO */
+/* ==================== */
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 0;
+}
+
+/* ==================== */
+/* HERO SECTION CENTRADO */
+/* ==================== */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(135deg, #f8fbff 0%, #e8f0fe 100%);
+  border-bottom: none;
+  margin-top: -80px; /* Compensa el padding del main-content */
+  padding-top: 80px;
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ==================== */
+/* SECCIONES GENERALES */
+/* ==================== */
+section {
+  width: 100%;
+  padding: 80px 0;
+  border-bottom: 1px solid rgba(0, 0, 139, 0.05);
+}
+
+/* Contenedores de sección específicos */
+.about-container,
+.skills-container,
+.education-container,
+.contact-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==================== */
+/* FOOTER CENTRADO */
+/* ==================== */
+.footer {
+  background: var(--dark-blue);
+  color: white;
+  padding: 60px 0 30px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== */
+/* ELEMENTOS COMUNES */
+/* ==================== */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--dark-blue);
+  position: relative;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-blue);
+  border-radius: 2px;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background: var(--dark-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 139, 0.15);
+}
+
+/* Tarjetas */
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 139, 0.12);
+}
+
+/* ==================== */
+/* ANIMACIONES */
+/* ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ==================== */
+/* RESPONSIVE */
+/* ==================== */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 70px 15px 0;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .header-container,
+  .footer-container {
+    padding: 0 15px;
+  }
+  
+  .about-container,
+  .skills-container,
+  .education-container,
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Menú móvil */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 139, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-content {
+    padding: 60px 10px 0;
+  }
+  
+  section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .header-container,
+  .footer-container {
+    padding: 0 10px;
+  }
+}

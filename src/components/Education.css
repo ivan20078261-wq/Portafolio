@@ -1,0 +1,248 @@
+/* Education.css - Actualizado para lucide-react */
+
+.education-section {
+  background: var(--white);
+}
+
+.education-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.education-header svg {
+  color: var(--primary-blue);
+}
+
+.education-subtitle {
+  font-size: 1.8rem;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.learning-description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-blue);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background: var(--primary-blue);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.timeline-year svg {
+  font-size: 0.8rem;
+}
+
+.timeline-content {
+  background: rgba(26, 115, 232, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-blue);
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-blue);
+}
+
+.timeline-institution {
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.timeline-description {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.education-note {
+  background: rgba(26, 115, 232, 0.08);
+  padding: 1.2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.education-note svg {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.education-note p {
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+.learning-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.learning-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.learning-icon {
+  width: 30px;
+  height: 30px;
+  background: rgba(26, 115, 232, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.learning-icon svg {
+  display: block;
+}
+
+.learning-text {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.education-goals {
+  background: linear-gradient(135deg, rgba(26, 115, 232, 0.05), rgba(66, 133, 244, 0.05));
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(26, 115, 232, 0.1);
+}
+
+.goals-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.goals-header svg {
+  color: var(--primary-blue);
+}
+
+.goals-title {
+  font-size: 1.3rem;
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+.goals-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.goals-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.goals-list li:last-child {
+  margin-bottom: 0;
+}
+
+.goal-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+}
+
+.goals-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .education-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline {
+    padding-left: 25px;
+  }
+  
+  .timeline-year {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+    display: inline-flex;
+  }
+  
+  .education-note {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

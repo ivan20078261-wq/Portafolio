@@ -1,0 +1,159 @@
+/* About.css - Actualizado para lucide-react */
+
+.about-section {
+  background: var(--white);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.about-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.about-icon svg {
+  display: block;
+}
+
+.about-card-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--dark-blue);
+}
+
+.about-card-text {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.about-details {
+  padding: 2.5rem;
+}
+
+.details-title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(26, 115, 232, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.detail-icon svg {
+  display: block;
+}
+
+.detail-content {
+  flex: 1;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--dark-blue);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.detail-value {
+  color: var(--text-light);
+  font-size: 1rem;
+  display: block;
+}
+
+.detail-value.link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.detail-value.link:hover {
+  text-decoration: underline;
+}
+
+.about-quote {
+  background: rgba(26, 115, 232, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-blue);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.quote-icon {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.quote-text {
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-item {
+    align-items: center;
+  }
+  
+  .about-quote {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .quote-icon {
+    align-self: center;
+  }
+}
