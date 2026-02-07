@@ -5,12 +5,7 @@ import './Skills.css';
 // Importar iconos de lucide-react
 import {
   Smartphone,
-  Code2,
-  Layers,
-  Palette,
-  FileCode,
   GitBranch,
-  Terminal,
   Lightbulb
 } from 'lucide-react';
 
@@ -20,7 +15,8 @@ import { SiJavascript, SiReact, SiCss3, SiHtml5, SiLinux } from 'react-icons/si'
 interface Skill {
   name: string;
   level: number;
-  icon: JSX.Element;
+  icon?: React.JSX.Element;
+
   color: string;
 }
 

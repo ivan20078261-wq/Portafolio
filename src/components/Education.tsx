@@ -5,7 +5,7 @@ import './Education.css';
 // Importar iconos de lucide-react
 import {
   GraduationCap,
-  CheckCircle2,
+
   BookOpen,
   Target,
   Calendar,

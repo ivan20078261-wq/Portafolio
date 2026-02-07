@@ -10,7 +10,6 @@ import {
   Lock,
   Star,
   GitBranch,
-  Handshake,
   CheckCircle2,
   Code2,
   Clock,
@@ -63,6 +62,7 @@ const Projects: React.FC = () => {
       live: '#',
       featured: false,
       status: "planned", // ← Este determinará el color (ROJO)
+      releaseDate: "Marzo 2026"
     },
     {
       id: 3,
