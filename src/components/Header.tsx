@@ -22,6 +22,11 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     { name: 'Contacto', href: '#contact' }
   ];
 
+  // Cerrar menú al hacer clic en un enlace
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <motion.header
       className={`header ${scrolled ? 'scrolled' : ''}`}
@@ -42,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
                 <a
                   href={item.href}
                   className="nav-link"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={handleLinkClick}
                 >
                   {item.name}
                 </a>
@@ -52,13 +57,13 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
         </nav>
 
         <button
-          className="menu-toggle"
+          className={`menu-toggle ${menuOpen ? 'open' : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`bar ${menuOpen ? 'open' : ''}`}></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </button>
       </div>
     </motion.header>
