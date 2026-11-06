@@ -54,18 +54,6 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Social Network Mockup',
-      description: 'Prototipo de red social con diseño moderno y funcionalidades básicas de publicación, comentarios y mensajería. Incluye autenticación de usuarios y panel de administración.',
-      technologies: ['React Native', 'React Native Paper', 'Firebase'],
-      category: 'mobile',
-      github: "https://github.com/IM20078/redSocial",
-      live: '#',
-      featured: false,
-      status: "planned", // ← Este determinará el color (ROJO)
-      releaseDate: "Marzo 2026"
-    },
-    {
-      id: 3,
       title: "KioscoSmart",
       description: 'Aplicación para seguimiento de gastos e ingresos con análisis de hábitos financieros, gráficos interactivos y pronósticos de ahorro.',
       technologies: ['React Native', 'TypeScript', 'Redux', 'Chart.js', 'Supabase'],
@@ -78,19 +66,7 @@ const Projects: React.FC = () => {
       releaseDate: 'Abril 2026'
     },
     {
-      id: 4,
-      title: 'Delivery Service App',
-      description: 'Plataforma de delivery con seguimiento en tiempo real, chat con repartidores, sistema de calificaciones y pagos integrados.',
-      technologies: ['React Native', 'Google Maps API', 'Socket.io', 'Node.js'],
-      category: 'mobile',
-      github: '#',
-      live: '#',
-      featured: false,
-      status: 'planned', // ← Este determinará el color (ROJO)
-      releaseDate: 'Marzo 2026'
-    },
-    {
-      id: 5,
+      id: 3,
       title: "ClimaApp",
       description: "Descubre el tiempo actual y los pronósticos de forma rápida y sencilla. Diseñada pensando en la claridad y la facilidad de uso, ofrece una experiencia fluida que te mantiene informado sin complicaciones.",
       technologies: ["React Native", "Expo", "AccuWheather"],
@@ -98,6 +74,42 @@ const Projects: React.FC = () => {
       github: "https://github.com/ivan20078261-wq/clima-app",
       featured: false,
       status: "completed",
+
+    },
+    {
+      id: 4,
+      title: 'Agroriego',
+      description: 'Sistema de gestión de riego inteligente para optimizar el consumo de agua en cultivos agrícolas. Monitorea la humedad del suelo y automatiza el riego según las necesidades de cada planta.',
+      technologies: ['React Native', 'Expo', 'Firebase', 'TypeScript'],
+      category: 'mobile',
+      github: 'https://github.com/ivan20078261-wq/Agroriego',
+      live: '#',
+      featured: false,
+      status: 'completed',
+      releaseDate: '2026'
+    },
+    {
+      id: 5,
+      title: 'Roman',
+      description: 'Aplicación de gestión y organización personal con enfoque en productividad y seguimiento de tareas diarias.',
+      technologies: ['React Native', 'TypeScript', 'SQLite'],
+      category: 'mobile',
+      github: 'https://github.com/ivan20078261-wq/roman',
+      live: '#',
+      featured: false,
+      status: 'completed'
+
+    },
+    {
+      id: 6,
+      title: 'CasoForense',
+      description: 'Herramienta para el análisis y gestión de casos forenses digitales, permitiendo registrar evidencias y generar reportes estructurados.',
+      technologies: ['React Native', 'Node.js', 'MongoDB', 'TypeScript'],
+      category: 'mobile',
+      github: 'https://github.com/ivan20078261-wq/CasoForense',
+      live: '#',
+      featured: false,
+      status: 'completed'
 
     }
   ];
@@ -202,8 +214,10 @@ const Projects: React.FC = () => {
         >
           <div className="filters-container">
             {categories.map((category) => {
-              const categoryColor = getColorByStatus(category.id as any);
               const isStatusCategory = ['completed', 'in-progress', 'planned'].includes(category.id);
+              const categoryColor = isStatusCategory
+                ? getColorByStatus(category.id as Project['status'])
+                : '#4f46e5';
 
               return (
                 <button
@@ -475,13 +489,13 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <div className="cta-content">
-            <GitBranch size={32} style={{ color: '#1a73e8' }} />
+            <GitBranch size={32} className="text-primary" />
             <p>
               También tengo proyectos privados y contribuciones a código abierto.
               ¿Interesado en colaborar?
             </p>
           </div>
-          <a href="#contact" className="btn btn-outline" style={{ borderColor: '#1a73e8', color: '#fff', alignItems: "center" }}>
+          <a href="#contact" className="btn btn-primary">
             <span>Hablemos de tu proyecto</span>
           </a>
         </motion.div>

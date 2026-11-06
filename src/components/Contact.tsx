@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Linkedin, Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react'; // Importa Formspree
 import './Contact.css';
 
@@ -60,23 +60,6 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="contact-item">
-            <div className="contact-icon linkedin-icon">
-              <Linkedin size={24} />
-            </div>
-            <div className="contact-details">
-              <h4 className="contact-type">LinkedIn</h4>
-              <a
-                href="https://www.linkedin.com/in/ivan-molina-25b42325a"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-value"
-              >
-                Conectar en LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <div className="contact-item">
             <div className="contact-icon location-icon">
               <MapPin size={24} />
             </div>
@@ -128,7 +111,6 @@ const Contact: React.FC = () => {
                   className="form-input"
                   placeholder="Tu nombre"
                   required
-                  style={{ color: "#000" }}
                 />
               </div>
 
@@ -143,7 +125,6 @@ const Contact: React.FC = () => {
                   className="form-input"
                   placeholder="tu@email.com"
                   required
-                  style={{ color: "#000" }}
                 />
                 <ValidationError
                   prefix="Email"
@@ -164,7 +145,6 @@ const Contact: React.FC = () => {
                   rows={5}
                   placeholder="Escribe tu mensaje aquí..."
                   required
-                  style={{ color: "#000" }}
                 ></textarea>
                 <ValidationError
                   prefix="Mensaje"

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -8,20 +8,29 @@ import Project from "./components/Project"
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { getStoredTheme, applyTheme, toggleTheme, type Theme } from './utils/theme';
 import './App.css';
 
 function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [theme, setTheme] = useState<Theme>(() => getStoredTheme());
 
-  // Usa useScroll en el elemento principal que tiene scroll
   const { scrollYProgress } = useScroll();
 
-  // Convierte el progreso a un spring para animación suave
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
+
+  /* Aplica el tema al <html> cada vez que cambia */
+  useEffect(() => {
+    applyTheme(theme);
+  }, [theme]);
+
+  const handleToggleTheme = useCallback(() => {
+    setTheme((prev) => toggleTheme(prev));
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,9 +42,7 @@ function App() {
   }, []);
 
   return (
-    // El contenedor principal necesita tener posición relativa
     <div className="App" style={{ position: 'relative' }}>
-      {/* Barra de progreso - DEBE estar en el mismo contexto que useScroll */}
       <motion.div
         className="progress-bar"
         style={{
@@ -45,13 +52,13 @@ function App() {
           left: 0,
           right: 0,
           height: '4px',
-          background: 'linear-gradient(90deg, #1a73e8, #4285f4)',
+          background: 'linear-gradient(90deg, var(--color-primary), var(--color-secondary))',
           transformOrigin: '0%',
           zIndex: 9999
         }}
       />
 
-      <Header scrolled={scrolled} />
+      <Header scrolled={scrolled} theme={theme} onToggleTheme={handleToggleTheme} />
       <main className="main-content">
         <Hero />
         <About />

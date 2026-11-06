@@ -6,7 +6,8 @@ import './Skills.css';
 import {
   Smartphone,
   GitBranch,
-  Lightbulb
+  Lightbulb,
+  Code2
 } from 'lucide-react';
 
 // Importar iconos de react-icons para logos específicos
@@ -68,6 +69,12 @@ const Skills: React.FC = () => {
       level: 60,
       icon: <SiLinux size={20} />,
       color: '#FCC624'
+    },
+    {
+      name: 'C++',
+      level: 45,
+      icon: <Code2 size={20} />,
+      color: '#00599C'
     },
   ];
 

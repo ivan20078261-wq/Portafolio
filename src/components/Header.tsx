@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Sun, Moon } from 'lucide-react';
 import './Header.css';
 
 interface HeaderProps {
   scrolled: boolean;
+  theme: string;
+  onToggleTheme: () => void;
 }
 
 interface NavItem {
@@ -11,7 +14,7 @@ interface NavItem {
   href: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ scrolled }) => {
+const Header: React.FC<HeaderProps> = ({ scrolled, theme, onToggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const navItems: NavItem[] = [
@@ -22,7 +25,6 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
     { name: 'Contacto', href: '#contact' }
   ];
 
-  // Cerrar menú al hacer clic en un enlace
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
@@ -56,15 +58,30 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
           </ul>
         </nav>
 
-        <button
-          className={`menu-toggle ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
+        <div className="header-actions">
+          <button
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label="Cambiar tema"
+            title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+          >
+            {theme === 'dark' ? (
+              <Sun size={20} />
+            ) : (
+              <Moon size={20} />
+            )}
+          </button>
+
+          <button
+            className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Abrir menú"
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
+        </div>
       </div>
     </motion.header>
   );

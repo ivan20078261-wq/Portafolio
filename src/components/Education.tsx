@@ -36,6 +36,12 @@ const Education: React.FC = () => {
       title: 'Técnico agrario con orientación a enología',
       institution: 'Escuela Secundaria Los Corralitos',
       description: 'Formación técnica especializada en agricultura con enfoque en enología (elaboración de vinos).'
+    },
+    {
+      year: '2026 - Actualidad',
+      title: 'Desarrollo de software',
+      institution: 'ITU',
+      description: 'Estudiante de Desarrollo de Software en el Instituto Tecnológico Universitario.'
     }
   ];
 
@@ -46,7 +52,8 @@ const Education: React.FC = () => {
     { text: 'Gestión de estado con Context API y Redux', icon: <Database size={16} /> },
     { text: 'Integración de APIs REST y Firebase', icon: <Database size={16} /> },
     { text: 'Control de versiones con Git', icon: <GitBranch size={16} /> },
-    { text: 'Tercer puesto en concurso de aplicaciones para industria', icon: <Award size={16} /> }
+    { text: 'Essential 1 - Cisco (certificación)', icon: <Award size={16} /> },
+    { text: 'Fundamentos de Linux - Cisco (certificación)', icon: <Award size={16} /> }
   ];
 
   const learningGoals = [

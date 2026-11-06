@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Mail, MapPin, ArrowUp } from 'lucide-react';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -36,11 +37,11 @@ const Footer: React.FC = () => {
             <h4 className="footer-title">Contacto</h4>
             <div className="footer-contact-info">
               <p className="footer-email">
-                <i className="fas fa-envelope"></i>
+                <Mail size={18} />
                 ivan20078261@gmail.com
               </p>
               <p className="footer-location">
-                <i className="fas fa-map-marker-alt"></i>
+                <MapPin size={18} />
                 Los Corralitos, Mendoza
               </p>
             </div>
@@ -50,12 +51,11 @@ const Footer: React.FC = () => {
         <div className="footer-bottom">
           <div className="footer-copyright">
             <p>&copy; {currentYear} Ivan Molina. Todos los derechos reservados.</p>
-
           </div>
 
           <div className="footer-back-to-top">
             <a href="#hero" className="back-to-top">
-              <i className="fas fa-arrow-up"></i>
+              <ArrowUp size={16} />
               Volver arriba
             </a>
           </div>
